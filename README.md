@@ -1,6 +1,5 @@
 # Discord Streaming Status
 
-## about
 ```
 Discord streaming status!
 ```
