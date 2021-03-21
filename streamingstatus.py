@@ -5,22 +5,20 @@ from discord.ext import tasks
 
 with open(f"config.json") as f:
         configmain = json.load(f)
-        discordtoken = configmain.get('token')
+        token = configmain.get('token')
         title = configmain.get('title')
         url = configmain.get('url')
-seggstoken = discordtoken
-seggstitle = title
-seggsurl = url
-client = discord.Client()
 
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Streaming(name=f"{seggstitle}", url=f"{seggsurl}"))
+    await client.change_presence(activity=discord.Streaming(name=f"{title}", url=f"{url}"))
     print(f"""
+    
     Discord: Discord.gg/cdKzZQJH6c
     started
-    Title: {seggstitle}
-    Url:   {seggsurl}
+    Title: {title}
+    Url:   {url}
+    
     """)
 
-client.run(seggstoken, bot=False)
+client.run(token, bot=False)
